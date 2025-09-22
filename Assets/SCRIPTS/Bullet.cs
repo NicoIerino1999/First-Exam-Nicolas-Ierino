@@ -19,4 +19,12 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Dummy")
+        {
+            collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            Destroy(gameObject);
+        }
+    }
 }
